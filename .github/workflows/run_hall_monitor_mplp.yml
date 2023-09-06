@@ -1,0 +1,25 @@
+name: Use hall monitor to see if any servers are down
+on:
+  workflow_dispatch:
+  schedule:
+    # run once every hour
+    # * is a special character in YAML so you have to quote this string
+    - cron:  "0 * * * *"
+
+jobs:
+  dev-monitor:
+    runs-on: ubuntu-latest
+    name: Check dev server for misinstalled interviews
+    steps:
+      - uses: SuffolkLITLab/ALActions/hall_monitor@main
+        with:
+          SERVER_URL: "http://da-dev.mplp.org/"
+      - run: echo "Finished running monitor for dev"
+  prod-monitor:
+    runs-on: ubuntu-latest
+    name: Check prod server for misinstalled interviews
+    steps:
+      - uses: SuffolkLITLab/ALActions/hall_monitor@main
+        with:
+          SERVER_URL: "http://da-prod.mplp.org/"
+      - run: echo "Finished running monitor for prod"
