@@ -14,10 +14,10 @@ jobs:
       - uses: SuffolkLITLab/ALActions/hall_monitor@main
         with:
           SERVER_URL: "http://da-dev.mplp.org/"
-          MAILGUN_API_KEY: ${{ secrets.MAILGUN_API_KEY }}
-          MAILGUN_DOMAIN: ${{ secrets.MAILGUN_DOMAIN }}
-          ERROR_EMAILS: ${{ secrets.ERROR_EMAILS }}
-          ERROR_EMAIL_FROM: ${{ secrets.ERROR_EMAIL_FROM }}
+          MAILGUN_API_KEY: ${{ secrets.MPLP_MAILGUN_API_KEY }}
+          MAILGUN_DOMAIN: ${{ secrets.MPLP_MAILGUN_DOMAIN }}
+          ERROR_EMAILS: ${{ secrets.MPLP_ERROR_EMAILS }}
+          ERROR_EMAIL_FROM: ${{ secrets.MPLP_ERROR_EMAIL_FROM }}
       - run: echo "Finished running monitor for dev"
   prod-monitor:
     runs-on: ubuntu-latest
@@ -26,8 +26,8 @@ jobs:
       - uses: SuffolkLITLab/ALActions/hall_monitor@main
         with:
           SERVER_URL: "http://da-prod.mplp.org/"
-          MAILGUN_API_KEY: ${{ secrets.MAILGUN_API_KEY }}
-          MAILGUN_DOMAIN: ${{ secrets.MAILGUN_DOMAIN }}
-          ERROR_EMAILS: ${{ secrets.ERROR_EMAILS }}
-          ERROR_EMAIL_FROM: ${{ secrets.ERROR_EMAIL_FROM }}
+          MAILGUN_API_KEY: ${{ secrets.MPLP_MAILGUN_API_KEY }}
+          MAILGUN_DOMAIN: ${{ secrets.MPLP_MAILGUN_DOMAIN }}
+          ERROR_EMAILS: ${{ secrets.MPLP_ERROR_EMAILS }}
+          ERROR_EMAIL_FROM: ${{ secrets.MPLP_ERROR_EMAIL_FROM }}
       - run: echo "Finished running monitor for prod"
