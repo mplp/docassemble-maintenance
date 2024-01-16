@@ -25,7 +25,7 @@ jobs:
     steps:
       - uses: SuffolkLITLab/ALActions/hall_monitor@main
         with:
-          SERVER_URL: "http://da-prod.mplp.org/"
+          SERVER_URL: "https://forms.michiganlegalhelp.org/"
           MAILGUN_API_KEY: ${{ secrets.MPLP_MAILGUN_API_KEY }}
           MAILGUN_DOMAIN: ${{ secrets.MPLP_MAILGUN_DOMAIN }}
           ERROR_EMAILS: ${{ secrets.MPLP_ERROR_EMAILS }}
